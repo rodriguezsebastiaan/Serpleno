@@ -1,9 +1,10 @@
 services:
   - type: web
     name: serpleno
-    env: nixpacks
+    env: docker
     plan: free
     branch: main
     rootDir: .
-    buildCommand: ""
-    startCommand: php -S 0.0.0.0:10000
+    dockerfilePath: ./Dockerfile
+    autoDeploy: true
+
