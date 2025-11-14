@@ -1,6 +1,6 @@
 export function loadEnv() {
   if (!window.__ENV__) {
-    throw new Error('No se encontró window.__ENV__. Crea public/env.js a partir de public/env.example.js.');
+    throw new Error('No se encontró window.__ENV__. Crea env.js a partir de env.example.js en la raíz del proyecto.');
   }
   const required = [
     'SUPABASE_URL',
