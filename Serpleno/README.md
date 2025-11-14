@@ -6,11 +6,10 @@ Migración en curso del antiguo backend PHP a un frontend 100% estático que con
 
 ```
 legacy-php/           # Código PHP original para consulta histórica
-public/
-  *.html              # Pantallas migradas (splash, login, registro, reset, home, planes, plan_detail, content, notifications)
-  assets/js/lib/      # Layout y helpers de sesión
-  assets/js/supabaseClient.js  # Único punto de conexión a Supabase
-  assets/js/pages/    # Controladores por vista
+*.html                # Pantallas migradas (splash, login, registro, reset, home, planes, plan_detail, content, notifications)
+assets/js/lib/        # Layout y helpers de sesión
+assets/js/supabaseClient.js  # Único punto de conexión a Supabase
+assets/js/pages/      # Controladores por vista
 supabase/
   schema.sql          # Tablas y relaciones requeridas por Supabase
   policies.sql        # RLS + policies
@@ -18,9 +17,9 @@ supabase/
 
 ## Configuración rápida
 
-1. La conexión oficial ya está definida en `public/assets/js/supabaseClient.js` apuntando a `https://hkvzkvkriiguamjbuqyx.supabase.co`.
+1. La conexión oficial ya está definida en `assets/js/supabaseClient.js` apuntando a `https://hkvzkvkriiguamjbuqyx.supabase.co`.
 2. Ejecuta `supabase/schema.sql` y `supabase/policies.sql` dentro de ese proyecto Supabase.
-3. Sube `public/` a un hosting estático o sirve localmente con `python -m http.server`.
+3. Sube el contenido del repositorio (con `index.html` en la raíz) a un hosting estático o sirve localmente con `python -m http.server`.
 
 ## Flujo soportado actualmente
 
@@ -36,13 +35,13 @@ El resto de pantallas conserva su código PHP dentro de `legacy-php/` mientras s
 
 ## Notas sobre configuración
 
-- La clave pública y la URL de Supabase ya viven en `public/assets/js/supabaseClient.js`; no hay otras configuraciones duplicadas.
+- La clave pública y la URL de Supabase ya viven en `assets/js/supabaseClient.js`; no hay otras configuraciones duplicadas.
 - Los buckets esperados son `home-slides` (carrusel de la home) y `contenidos` (material restringido).
 - Puedes seguir utilizando un archivo `.env` local para anotar valores auxiliares, pero el frontend ya no depende de él.
 
 ## Notas
 
-- `public/assets/js/lib/session.js` centraliza la sesión y aplica los guards por rol.
-- Cada archivo en `public/assets/js/pages/` se encarga de leer y escribir directamente en las tablas establecidas (usuarios, planes, caracteristicas_plan, suscripciones, notificaciones, reservas, contenidos, etc.).
+- `assets/js/lib/session.js` centraliza la sesión y aplica los guards por rol.
+- Cada archivo en `assets/js/pages/` se encarga de leer y escribir directamente en las tablas establecidas (usuarios, planes, caracteristicas_plan, suscripciones, notificaciones, reservas, contenidos, etc.).
 - `supabase/schema.sql` usa `uuid_generate_v4()` y referencia `auth.users` para cumplir con Supabase Auth.
 
