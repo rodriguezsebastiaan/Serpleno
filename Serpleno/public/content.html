@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Contenido abierto - Serpleno</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="content" data-require-auth="true" data-allowed-roles="cliente,admin,profesional,pro">
+  <header data-app-header></header>
+  <main class="container centered">
+    <div class="alert success" data-content-premium style="display:none;">Este es el contenido gratuito disponible para todos los planes.</div>
+    <h2 style="margin-bottom:10px;">Contenido abierto</h2>
+    <div class="filters card" style="margin:0 auto 16px;max-width:980px;">
+      <div class="filters-row">
+        <label>Día:
+          <select id="contentDay">
+            <option value="">Todos</option>
+            <option>Lunes</option><option>Martes</option><option>Miércoles</option>
+            <option>Jueves</option><option>Viernes</option><option>Sábado</option><option>Domingo</option>
+          </select>
+        </label>
+        <div class="chip-group" id="contentCats">
+          <button class="chip active" data-cat="entrenamientos">Entrenamientos</button>
+          <button class="chip" data-cat="coach">Coach de vida</button>
+          <button class="chip" data-cat="psicologia">Psicología</button>
+          <button class="chip" data-cat="nutricion">Nutrición</button>
+        </div>
+      </div>
+    </div>
+    <div id="contentVideos" class="grid center-grid"></div>
+  </main>
+  <footer data-app-footer></footer>
+  <script type="module" src="assets/js/app.js"></script>
+  <script type="module" src="assets/js/pages/content.js"></script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Detalle del plan - Serpleno</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="plan-detail" data-require-auth="true" data-allowed-roles="cliente,admin,profesional,pro">
+  <header data-app-header></header>
+  <main class="container centered">
+    <h2 data-plan-name></h2>
+    <div style="margin-bottom:12px; display:flex; gap:8px; justify-content:center; flex-wrap:wrap;" data-plan-cta></div>
+    <div class="plan-detail">
+      <section class="card">
+        <h3>Características</h3>
+        <ul class="centered-list" data-plan-features></ul>
+      </section>
+      <section class="card">
+        <h3>Calificaciones</h3>
+        <p><strong>Promedio:</strong> <span data-plan-average>0</span> / 5 (<span data-plan-total>0</span> votos)</p>
+        <div class="bars" data-plan-bars></div>
+        <h4 style="margin-top:14px;">¿Recomendarían la app?</h4>
+        <div class="pie-wrap">
+          <div class="pie" data-plan-pie style="--yes: 0;"></div>
+          <div class="legend">
+            <span class="yes-box"></span> Sí (<span data-plan-yes>0</span>%)
+            <span class="no-box" style="margin-left:12px;"></span> No (<span data-plan-no>100</span>%)
+          </div>
+        </div>
+      </section>
+      <section class="card">
+        <h3>Deja tu comentario</h3>
+        <form class="feedback-form" data-plan-feedback>
+          <label>Calificación
+            <select name="rating" required>
+              <option value="5">5 ★★★★★</option>
+              <option value="4">4 ★★★★</option>
+              <option value="3">3 ★★★</option>
+              <option value="2">2 ★★</option>
+              <option value="1">1 ★</option>
+            </select>
+          </label>
+          <label><input type="checkbox" name="recommend"> Recomiendo esta app</label>
+          <label>Comentario
+            <textarea name="comment" rows="3" placeholder="Escribe tu experiencia…" required></textarea>
+          </label>
+          <button class="btn primary" type="submit">Enviar</button>
+        </form>
+        <div class="alert success" data-plan-feedback-success style="display:none;"></div>
+        <div class="alert danger" data-plan-feedback-error style="display:none;"></div>
+      </section>
+      <section class="card">
+        <h3>Comentarios recientes</h3>
+        <p style="display:none;" data-plan-empty>Aún no hay comentarios. ¡Sé el primero!</p>
+        <ul class="comments centered-list" data-plan-comments></ul>
+      </section>
+    </div>
+  </main>
+  <footer data-app-footer></footer>
+  <script type="module" src="assets/js/app.js"></script>
+  <script type="module" src="assets/js/pages/plan-detail.js"></script>
+</body>
+</html>
