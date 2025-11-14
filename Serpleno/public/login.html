@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Ingresar - Serpleno</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="login" data-is-auth-page="true" data-require-auth="false" data-redirect-if-authed="home.html">
+  <header data-app-header></header>
+  <main class="container centered">
+    <div class="auth-wrapper">
+      <section class="card auth-card">
+        <h2 class="auth-title">Ingreso</h2>
+        <p style="margin:-4px 0 12px;color:#666;font-size:14px">
+          Ingresa con tu cuenta para continuar.
+        </p>
+        <div class="alert danger" data-login-error style="display:none;"></div>
+        <form class="auth-form" data-login-form novalidate>
+          <label>Email
+            <input type="email" name="email" required>
+          </label>
+          <label>Contraseña
+            <input type="password" name="password" required>
+          </label>
+          <button class="btn primary" type="submit">Ingresar</button>
+        </form>
+        <div class="auth-links stacked">
+          <a class="btn block" href="register.html">Regístrate</a>
+          <a class="btn block" href="reset.html">Recuperar contraseña</a>
+        </div>
+      </section>
+    </div>
+  </main>
+  <footer data-app-footer></footer>
+  <script src="env.js"></script>
+  <script type="module" src="assets/js/app.js"></script>
+  <script type="module" src="assets/js/pages/login.js"></script>
+</body>
+</html>

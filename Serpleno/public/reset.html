@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Restablecer contraseña - Serpleno</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="reset" data-is-auth-page="true" data-require-auth="false" data-redirect-if-authed="home.html">
+  <header data-app-header></header>
+  <main class="container centered">
+    <div class="auth-wrapper">
+      <section class="card auth-card">
+        <h2 class="auth-title">Restablecer contraseña</h2>
+        <div class="alert danger" data-reset-error style="display:none;"></div>
+        <div class="alert success" data-reset-success style="display:none;"></div>
+        <form class="auth-form" data-reset-form novalidate>
+          <label>Email de la cuenta
+            <input type="email" name="email" required>
+          </label>
+          <label>Nueva contraseña
+            <input type="password" name="pass1" required minlength="6">
+          </label>
+          <label>Repetir contraseña
+            <input type="password" name="pass2" required minlength="6">
+          </label>
+          <button class="btn primary" type="submit">Actualizar contraseña</button>
+        </form>
+        <div class="auth-links stacked">
+          <a class="btn block" href="login.html">Volver a Ingresar</a>
+          <a class="btn block" href="register.html">Crear cuenta</a>
+        </div>
+      </section>
+    </div>
+  </main>
+  <footer data-app-footer></footer>
+  <script src="env.js"></script>
+  <script type="module" src="assets/js/app.js"></script>
+  <script type="module" src="assets/js/pages/reset.js"></script>
+</body>
+</html>

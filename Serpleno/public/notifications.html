@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Notificaciones - Serpleno</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="notifications" data-require-auth="true" data-allowed-roles="cliente,admin,profesional,pro">
+  <header data-app-header></header>
+  <main class="container centered">
+    <div class="home-hero" style="max-width:920px;margin:0 auto;text-align:center;">
+      <h2 style="margin:6px 0 10px;">Notificaciones</h2>
+      <p style="color:#556;margin:0 auto 12px;max-width:760px">
+        Hola <strong data-notifications-name></strong>. Revisa aquí tu próxima renovación y accesos rápidos a tus sesiones.
+      </p>
+      <section class="card" data-notifications-upgrade style="max-width:760px;text-align:center;display:none;">
+        <div class="alert danger" style="margin-top:0">Funcionalidad disponible en planes Silver y Premium.</div>
+        <p style="color:#667;margin:8px 0">
+          Actualiza tu plan para recibir recordatorios de pagos, unirte a entrenamientos/citas en vivo y más.
+        </p>
+        <a class="btn primary" href="plans.html">Ver planes</a>
+      </section>
+      <section class="card" data-notifications-subscription style="max-width:860px;text-align:center;display:none;">
+        <h3 style="margin:0 0 8px 0;">Estado de suscripción</h3>
+        <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:8px">
+          <span class="badge" data-notifications-plan></span>
+          <span class="badge" data-notifications-cycle></span>
+        </div>
+        <p style="font-size:16px;margin:8px 0;color:#334">
+          <strong>Próxima renovación:</strong>
+          <span data-notifications-renewal></span>
+        </p>
+        <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:8px">
+          <a class="btn primary" href="pay.html">Pagar ahora</a>
+          <a class="btn" href="meeting.html">Entrar a la sala</a>
+        </div>
+      </section>
+      <section class="card" data-notifications-sessions style="max-width:860px;text-align:center;margin-top:12px;display:none;">
+        <h3 style="margin:0 0 8px 0;">Próximas sesiones</h3>
+        <p class="empty" data-notifications-empty style="color:#667;margin:6px 0;display:none;">Aún no tienes sesiones agendadas.</p>
+        <div class="bookings" data-notifications-bookings style="display:grid;grid-template-columns:repeat(1,minmax(240px,1fr));gap:10px;max-width:760px;margin:0 auto;"></div>
+        <a class="btn outline" href="schedule.html">Agendar entrenamiento/cita</a>
+      </section>
+      <section class="card" style="max-width:860px;text-align:left;margin-top:12px;">
+        <h3 style="margin:0 0 8px 0;">Historial</h3>
+        <div data-notifications-list class="notification-list"></div>
+      </section>
+      <p style="margin:12px 0;">
+        <a class="btn outline" href="home.html">Volver al inicio</a>
+      </p>
+    </div>
+  </main>
+  <footer data-app-footer></footer>
+  <script src="env.js"></script>
+  <script type="module" src="assets/js/app.js"></script>
+  <script type="module" src="assets/js/pages/notifications.js"></script>
+</body>
+</html>

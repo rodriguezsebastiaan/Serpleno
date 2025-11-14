@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Registrarse - Serpleno</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="register" data-is-auth-page="true" data-require-auth="false" data-redirect-if-authed="home.html">
+  <header data-app-header></header>
+  <main class="container centered">
+    <div class="auth-wrapper">
+      <section class="card auth-card">
+        <h2 class="auth-title">Registrarse</h2>
+        <div class="alert danger" data-register-error style="display:none;"></div>
+        <div class="alert success" data-register-success style="display:none;"></div>
+        <form class="auth-form" data-register-form novalidate>
+          <label>Nombre
+            <input type="text" name="name" required>
+          </label>
+          <label>Email
+            <input type="email" name="email" required>
+          </label>
+          <label>Contraseña (mínimo 6)
+            <input type="password" name="password" required minlength="6">
+          </label>
+          <button class="btn primary" type="submit">Crear cuenta</button>
+        </form>
+        <div class="auth-links stacked">
+          <a class="btn block" href="login.html">Ya tengo cuenta</a>
+          <a class="btn block" href="reset.html">Recuperar contraseña</a>
+        </div>
+      </section>
+    </div>
+  </main>
+  <footer data-app-footer></footer>
+  <script src="env.js"></script>
+  <script type="module" src="assets/js/app.js"></script>
+  <script type="module" src="assets/js/pages/register.js"></script>
+</body>
+</html>
