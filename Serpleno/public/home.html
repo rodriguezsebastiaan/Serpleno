@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Inicio - Serpleno</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="home" data-require-auth="true" data-allowed-roles="cliente,admin,profesional,pro">
+  <header data-app-header></header>
+  <main class="container centered">
+    <div class="home-hero">
+      <h2>Hola <span data-home-username></span>, bienvenido a Serpleno</h2>
+      <div id="carouselNotice" class="alert danger" style="display:none;"></div>
+      <div id="fadeCarousel" class="carousel-fade" style="max-width:640px;height:200px;margin:10px auto;">
+        <button class="carousel-btn prev" aria-label="Anterior" style="left:8px;">&#10094;</button>
+        <button class="carousel-btn next" aria-label="Siguiente" style="right:8px;">&#10095;</button>
+        <div class="carousel-dots"></div>
+      </div>
+      <p style="margin-top:12px;" data-home-cta>
+        <a class="btn primary" href="plans.html">Conoce nuestros planes</a>
+      </p>
+    </div>
+  </main>
+  <footer data-app-footer></footer>
+  <script src="env.js"></script>
+  <script type="module" src="assets/js/app.js"></script>
+  <script type="module" src="assets/js/pages/home.js"></script>
+</body>
+</html>
